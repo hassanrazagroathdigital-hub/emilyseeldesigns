@@ -33,7 +33,7 @@ export function ProductCarousel({ slides }: { slides: CarouselSlide[] }) {
                 objectPosition: slide.position ?? "center",
                 opacity: i === index ? 1 : 0,
                 filter: slide.enhance ? "contrast(1.15) brightness(1.05)" : undefined,
-                backgroundColor: fit === "contain" ? "#ffffff" : undefined,
+                backgroundColor: slide.bg ?? (fit === "contain" ? "#ffffff" : undefined),
               }}
             />
           );
