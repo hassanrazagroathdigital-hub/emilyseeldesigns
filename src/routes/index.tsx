@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { FolkDivider } from "@/components/FolkDivider";
 import { Marquee } from "@/components/Marquee";
+import { ProductCarousel, type CarouselSlide } from "@/components/ProductCarousel";
 import heroBlocks from "@/assets/hero-blocks.jpg";
 import portrait from "@/assets/emily-portrait.jpg";
 import patternBlocks from "@/assets/pattern-blocks.jpg";
@@ -13,6 +14,28 @@ import shirtWings from "@/assets/shirt-wings.jpg";
 import activityBoard from "@/assets/activity-board.jpg";
 import quiltPinwheel from "@/assets/quilt-pinwheel.jpg";
 import mosaicPlate from "@/assets/mosaic-plate.jpg";
+import pb1 from "@/assets/pattern-blocks-1.jpg";
+import pb2 from "@/assets/pattern-blocks-2.jpg";
+import pb3 from "@/assets/pattern-blocks-3.jpg";
+import pb4 from "@/assets/pattern-blocks-4.jpg";
+import sc1 from "@/assets/sand-city-1.jpg";
+import sc2 from "@/assets/sand-city-2.jpg";
+import sc3 from "@/assets/sand-city-3.jpg";
+import sc4 from "@/assets/sand-city-4.jpg";
+
+const patternBlocksSlides: CarouselSlide[] = [
+  { src: pb3, alt: "Wooden geometric Pattern Blocks", fit: "cover" },
+  { src: pb1, alt: "Pattern Blocks possible product line drawing", fit: "contain", enhance: true },
+  { src: pb4, alt: "Pattern Blocks ideation sketches", fit: "contain", enhance: true },
+  { src: pb2, alt: "Child playing with Pattern Blocks outdoors", fit: "cover" },
+];
+
+const sandCitySlides: CarouselSlide[] = [
+  { src: sc4, alt: "Colorful Sand City molds stacked", fit: "cover" },
+  { src: sc1, alt: "Sand City ideation sketches", fit: "contain", enhance: true },
+  { src: sc2, alt: "Sand City possible product line drawing", fit: "contain", enhance: true },
+  { src: sc3, alt: "Children playing with Sand City molds at the beach", fit: "cover" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
