@@ -107,6 +107,7 @@ const works: Work[] = [
     name: "Hideout Desk",
     img: hideoutDesk,
     desc: "Desk meets fort in this child's desk. Shutters attached to all legs create a great place to hide out. An overhang on one side allows the child to sit at the desk without damaging the shutter. Imaginative play has never been easier to foster.",
+    slides: hideoutDeskSlides,
   },
   {
     name: "Scooplas",
