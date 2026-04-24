@@ -29,7 +29,7 @@ export function ProductCarousel({ slides }: { slides: CarouselSlide[] }) {
               className="absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
               style={{
                 objectFit: fit,
-                objectPosition: "center",
+                objectPosition: slide.position ?? "center",
                 opacity: i === index ? 1 : 0,
                 filter: slide.enhance ? "contrast(1.15) brightness(1.05)" : undefined,
                 backgroundColor: fit === "contain" ? "#ffffff" : undefined,
