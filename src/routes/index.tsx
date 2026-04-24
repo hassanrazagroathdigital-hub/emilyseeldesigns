@@ -22,6 +22,15 @@ import sc1 from "@/assets/sand-city-1.jpg";
 import sc2 from "@/assets/sand-city-2.jpg";
 import sc3 from "@/assets/sand-city-3.jpg";
 import sc4 from "@/assets/sand-city-4.jpg";
+import hd1 from "@/assets/hideout-desk-1.jpg";
+import hd2 from "@/assets/hideout-desk-2.jpg";
+import hd3 from "@/assets/hideout-desk-3.jpg";
+import hd4 from "@/assets/hideout-desk-4.jpg";
+import sw1 from "@/assets/shirt-wings-1.jpg";
+import sw2 from "@/assets/shirt-wings-2.jpg";
+import sw3 from "@/assets/shirt-wings-3.jpg";
+import sw4 from "@/assets/shirt-wings-4.jpg";
+import sw5 from "@/assets/shirt-wings-5.jpg";
 
 const patternBlocksSlides: CarouselSlide[] = [
   { src: pb3, alt: "Wooden geometric Pattern Blocks", fit: "cover" },
@@ -35,6 +44,21 @@ const sandCitySlides: CarouselSlide[] = [
   { src: sc1, alt: "Sand City ideation sketches", fit: "contain", enhance: true },
   { src: sc2, alt: "Sand City possible product line drawing", fit: "contain", enhance: true },
   { src: sc3, alt: "Children playing with Sand City molds at the beach", fit: "cover" },
+];
+
+const hideoutDeskSlides: CarouselSlide[] = [
+  { src: hd1, alt: "Hideout Desk with green shuttered legs outdoors", fit: "cover" },
+  { src: hd2, alt: "Hideout Desk ideation sketches", fit: "contain", enhance: true },
+  { src: hd3, alt: "Hideout Desk possible product line drawing", fit: "contain", enhance: true },
+  { src: hd4, alt: "Child sitting at the Hideout Desk outdoors", fit: "cover", position: "top" },
+];
+
+const shirtWingsSlides: CarouselSlide[] = [
+  { src: sw1, alt: "Wooden dragonfly-shaped Shirt Wings hanger", fit: "cover" },
+  { src: sw2, alt: "Shirt Wings gear mechanism sketch", fit: "contain", enhance: true },
+  { src: sw3, alt: "Shirt Wings how-it-works diagram", fit: "contain", enhance: true },
+  { src: sw4, alt: "Shirt Wings possible product line drawing", fit: "contain", enhance: true },
+  { src: sw5, alt: "Child using Shirt Wings hanger to hang a shirt", fit: "contain" },
 ];
 
 export const Route = createFileRoute("/")({
