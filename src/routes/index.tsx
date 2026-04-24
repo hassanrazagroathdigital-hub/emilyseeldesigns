@@ -123,6 +123,7 @@ const works: Work[] = [
     name: "Shirt Wings",
     img: shirtWings,
     desc: "Using conventional coat hangers is not easy for children. Shirt Wings are made with kids in mind. A gear mechanism allows the dragonfly-shaped wings to go up and down. When wings are down they fit in the neck of a shirt, then a pull of the hook raises them to hold the shirt in place, building independence and eye-hand coordination.",
+    slides: shirtWingsSlides,
   },
   {
     name: "Toddler Activity Boards",
