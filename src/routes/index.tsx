@@ -168,6 +168,7 @@ const works: Work[] = [
     name: "Toddler Activity Boards",
     img: activityBoard,
     desc: "These activity boards keep curious toddlers busy for hours. They are all cut to be interchangeable and fit an existing hanging system, so when children get bored with one, simply swap it out for another. Fine motor skills, color and shape matching, and number recognition are among the skills learned through play.",
+    slides: activityBoardSlides,
   },
 ];
 
