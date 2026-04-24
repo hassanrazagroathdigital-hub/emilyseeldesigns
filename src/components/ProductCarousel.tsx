@@ -7,6 +7,7 @@ export type CarouselSlide = {
   fit?: "cover" | "contain";
   enhance?: boolean;
   position?: "center" | "top" | "bottom";
+  bg?: string;
 };
 
 export function ProductCarousel({ slides }: { slides: CarouselSlide[] }) {
