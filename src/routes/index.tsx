@@ -74,6 +74,15 @@ const myLittleRocketSlides: CarouselSlide[] = [
   { src: mlr4, alt: "My Little Rocket possible product line drawing", fit: "contain", enhance: true },
 ];
 
+const activityBoardSlides: CarouselSlide[] = [
+  { src: ab1, alt: "Colorful Toddler Activity Board with rainbow elements", fit: "cover" },
+  { src: ab2, alt: "Activity board with latches, buckles, locks, and gears", fit: "cover" },
+  { src: ab3, alt: "Activity board with painted circles and sensory elements", fit: "cover" },
+  { src: ab4, alt: "Activity board variation with mechanical elements", fit: "cover" },
+  { src: ab5, alt: "Activity board variation with different arrangements", fit: "cover" },
+  { src: ab6, alt: "Children playing with the activity board", fit: "cover", position: "top" },
+];
+
 const scooplasSlides: CarouselSlide[] = [
   { src: sp1, alt: "White rounded mitten-form Scooplas product", fit: "contain", bg: "#F0EBE3" },
   { src: sp2, alt: "Scooplas ideation sketches", fit: "contain", enhance: true },
