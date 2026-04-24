@@ -1,26 +1,265 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageShell } from "@/components/PageShell";
+import { FolkDivider } from "@/components/FolkDivider";
+import { Marquee } from "@/components/Marquee";
+import heroBlocks from "@/assets/hero-blocks.jpg";
+import portrait from "@/assets/emily-portrait.jpg";
+import patternBlocks from "@/assets/pattern-blocks.jpg";
+import sandCity from "@/assets/sand-city.jpg";
+import hideoutDesk from "@/assets/hideout-desk.jpg";
+import scooplas from "@/assets/scooplas.jpg";
+import myLittleRocket from "@/assets/my-little-rocket.jpg";
+import shirtWings from "@/assets/shirt-wings.jpg";
+import activityBoard from "@/assets/activity-board.jpg";
+import quiltPinwheel from "@/assets/quilt-pinwheel.jpg";
+import mosaicPlate from "@/assets/mosaic-plate.jpg";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Emily Seel Designs — Industrial Design Portfolio" },
+      {
+        name: "description",
+        content:
+          "Industrial designer and multidisciplinary maker based in Portland, Oregon. Thoughtful, handmade products for children — where craft meets intention.",
+      },
+      { property: "og:title", content: "Emily Seel Designs — Industrial Design Portfolio" },
+      {
+        property: "og:description",
+        content:
+          "Handmade products for children, designed and built with intention by Emily Seel in Portland, Oregon.",
+      },
+      { property: "og:image", content: heroBlocks },
+      { name: "twitter:image", content: heroBlocks },
+    ],
+  }),
+  component: IndustrialDesignPage,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const works = [
+  {
+    name: "Pattern Blocks",
+    img: patternBlocks,
+    desc: "These classic wooden blocks are designed to have endless pattern possibilities. Each block has three different patterns and stained contrast to aid in pattern recognition and spatial recognition skills.",
+  },
+  {
+    name: "Sand City",
+    img: sandCity,
+    desc: "Sand City was inspired by sand castle molds. The market is so flooded with castle-themed sand toys, which are not relatable to children. Sand City enables children to make their own city at the beach with four unique city-building shaped molds.",
+  },
+  {
+    name: "Hideout Desk",
+    img: hideoutDesk,
+    desc: "Desk meets fort in this child's desk. Shutters attached to all legs create a great place to hide out. An overhang on one side allows the child to sit at the desk without damaging the shutter. Imaginative play has never been easier to foster.",
+  },
+  {
+    name: "Scooplas",
+    img: scooplas,
+    desc: "The age-old problem of getting kids to pick up their toys just got a little easier. Scooplas are light, have easy-to-use mittens, and are flat on the bottom, making them very effective at scooping toys off the floor.",
+  },
+  {
+    name: "My Little Rocket",
+    img: myLittleRocket,
+    desc: "Ever noticed how the large box that something was packaged in is often more entertaining than the toy itself? With My Little Rocket, the box is the toy. It unfolds into a spaceship big enough for children to play in, with pop-out cardboard pieces that connect like puzzle pieces to create stackable alien creatures.",
+  },
+  {
+    name: "Shirt Wings",
+    img: shirtWings,
+    desc: "Using conventional coat hangers is not easy for children. Shirt Wings are made with kids in mind. A gear mechanism allows the dragonfly-shaped wings to go up and down. When wings are down they fit in the neck of a shirt, then a pull of the hook raises them to hold the shirt in place, building independence and eye-hand coordination.",
+  },
+  {
+    name: "Toddler Activity Boards",
+    img: activityBoard,
+    desc: "These activity boards keep curious toddlers busy for hours. They are all cut to be interchangeable and fit an existing hanging system, so when children get bored with one, simply swap it out for another. Fine motor skills, color and shape matching, and number recognition are among the skills learned through play.",
+  },
+];
+
+function IndustrialDesignPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <PageShell>
+      {/* HERO */}
+      <section className="bg-cream">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-14 md:py-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="rise-in">
+            <span className="eyebrow">Industrial Design — Portfolio</span>
+            <h1 className="font-display text-ink text-5xl sm:text-6xl md:text-7xl mt-5 leading-[1.05]">
+              Where craft <br />
+              meets <em className="text-terracotta not-italic font-display">intention.</em>
+            </h1>
+            <p className="mt-7 max-w-[520px] text-ink/80">
+              Emily Seel is an Industrial Designer based in Portland, Oregon. She holds a Bachelor of
+              Science in Industrial Design from The Art Institute of Seattle, where she focused on
+              designing and building products for children. Every piece she creates is grounded in
+              thoughtful problem-solving, tactile materials, and the belief that great design makes
+              everyday life more joyful.
+            </p>
+            <div className="mt-9">
+              <a href="#work" className="btn-primary">view the work</a>
+            </div>
+          </div>
+          <div className="relative rise-in">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
+              <img
+                src={heroBlocks}
+                alt="Handmade wooden pattern blocks for children"
+                width={1280}
+                height={1280}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              className="absolute -bottom-4 -left-4 hidden md:block w-28 h-28 rounded-full border-2 border-dashed border-terracotta/60"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </section>
+
+      <FolkDivider />
+      <Marquee />
+      <FolkDivider />
+
+      {/* WORK */}
+      <section id="work" className="py-20 md:py-28 bg-cream">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 text-center mb-14">
+          <h2 className="font-display text-ink text-4xl md:text-5xl">Industrial Design Work</h2>
+          <p className="mt-3 font-display italic text-ink/65 text-lg">
+            Designing for children. Building for life.
+          </p>
+        </div>
+
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {works.map((w) => (
+            <article
+              key={w.name}
+              className="card-hover bg-card border border-border rounded-lg overflow-hidden flex flex-col"
+            >
+              <div className="aspect-[4/3] bg-linen overflow-hidden">
+                <img
+                  src={w.img}
+                  alt={w.name}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="font-display text-2xl text-ink">{w.name}</h3>
+                <p className="text-sm text-ink/75 mt-3 leading-relaxed">{w.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <FolkDivider />
+
+      {/* ABOUT STRIP */}
+      <section className="bg-linen py-20 md:py-28">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden border-[6px] border-terracotta/20 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
+              <img
+                src={portrait}
+                alt="Portrait of Emily Seel in her studio"
+                loading="lazy"
+                width={1024}
+                height={1280}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-terracotta/15 border border-terracotta/30 hidden md:block"
+              aria-hidden="true"
+            />
+          </div>
+          <div>
+            <span className="eyebrow">About</span>
+            <h2 className="font-display italic text-ink text-4xl md:text-5xl mt-3">
+              Hi, I am Emily.
+            </h2>
+            <p className="mt-6 text-ink/80">
+              Emily Seel is a Cabinet Designer and multidisciplinary maker based out of Portland,
+              Oregon. She completed her Bachelor of Science in Industrial Design from The Art
+              Institute of Seattle, where she focused her studies on designing and building products
+              for children. She enjoys all kinds of creative mediums, including sewing, painting,
+              carpentry, and ceramics. Emily also has a passion for nature and loves houseplants and
+              gardening.
+            </p>
+            <div className="mt-8">
+              <Link to="/contact" className="btn-primary">get in touch</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FolkDivider />
+
+      {/* DISCIPLINES TEASER */}
+      <section className="bg-cream py-20 md:py-28">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 text-center mb-14">
+          <h2 className="font-display text-ink text-4xl md:text-5xl">More From Emily</h2>
+          <p className="mt-3 font-display italic text-ink/65 text-lg">
+            Beyond industrial design — a full creative practice.
+          </p>
+        </div>
+
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-6">
+          <TeaserCard
+            to="/soft-goods"
+            title="Soft Goods"
+            desc="Handmade loveys, patchwork quilts, baby blankets, and children's aprons sewn with care and intention."
+            cta="view soft goods"
+            image={quiltPinwheel}
+          />
+          <TeaserCard
+            to="/other-work"
+            title="Other Work"
+            desc="Mosaic art, acrylic paintings, ceramics, woodwork, and garden installations spanning over a decade of making."
+            cta="view other work"
+            image={mosaicPlate}
+          />
+        </div>
+      </section>
+
+      <FolkDivider />
+    </PageShell>
   );
 }
 
-function Index() {
-  return <PlaceholderIndex />;
+function TeaserCard({
+  to,
+  title,
+  desc,
+  cta,
+  image,
+}: {
+  to: "/soft-goods" | "/other-work";
+  title: string;
+  desc: string;
+  cta: string;
+  image: string;
+}) {
+  return (
+    <Link
+      to={to}
+      className="card-hover relative block rounded-2xl overflow-hidden border border-border min-h-[360px] group"
+    >
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/10" />
+      <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full min-h-[360px]">
+        <h3 className="font-display text-cream text-3xl md:text-4xl">{title}</h3>
+        <p className="text-cream/85 mt-3 max-w-md text-sm">{desc}</p>
+        <span className="nav-link mt-5 text-terracotta inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+          {cta} <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </Link>
+  );
 }
