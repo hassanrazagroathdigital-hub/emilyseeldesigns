@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { FolkDivider } from "@/components/FolkDivider";
 import { Marquee } from "@/components/Marquee";
+import { ProductCarousel, type CarouselSlide } from "@/components/ProductCarousel";
 import heroBlocks from "@/assets/hero-blocks.jpg";
 import portrait from "@/assets/emily-portrait.jpg";
 import patternBlocks from "@/assets/pattern-blocks.jpg";
@@ -13,6 +14,28 @@ import shirtWings from "@/assets/shirt-wings.jpg";
 import activityBoard from "@/assets/activity-board.jpg";
 import quiltPinwheel from "@/assets/quilt-pinwheel.jpg";
 import mosaicPlate from "@/assets/mosaic-plate.jpg";
+import pb1 from "@/assets/pattern-blocks-1.jpg";
+import pb2 from "@/assets/pattern-blocks-2.jpg";
+import pb3 from "@/assets/pattern-blocks-3.jpg";
+import pb4 from "@/assets/pattern-blocks-4.jpg";
+import sc1 from "@/assets/sand-city-1.jpg";
+import sc2 from "@/assets/sand-city-2.jpg";
+import sc3 from "@/assets/sand-city-3.jpg";
+import sc4 from "@/assets/sand-city-4.jpg";
+
+const patternBlocksSlides: CarouselSlide[] = [
+  { src: pb3, alt: "Wooden geometric Pattern Blocks", fit: "cover" },
+  { src: pb1, alt: "Pattern Blocks possible product line drawing", fit: "contain", enhance: true },
+  { src: pb4, alt: "Pattern Blocks ideation sketches", fit: "contain", enhance: true },
+  { src: pb2, alt: "Child playing with Pattern Blocks outdoors", fit: "cover" },
+];
+
+const sandCitySlides: CarouselSlide[] = [
+  { src: sc4, alt: "Colorful Sand City molds stacked", fit: "cover" },
+  { src: sc1, alt: "Sand City ideation sketches", fit: "contain", enhance: true },
+  { src: sc2, alt: "Sand City possible product line drawing", fit: "contain", enhance: true },
+  { src: sc3, alt: "Children playing with Sand City molds at the beach", fit: "cover" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,16 +59,25 @@ export const Route = createFileRoute("/")({
   component: IndustrialDesignPage,
 });
 
-const works = [
+type Work = {
+  name: string;
+  img: string;
+  desc: string;
+  slides?: CarouselSlide[];
+};
+
+const works: Work[] = [
   {
     name: "Pattern Blocks",
     img: patternBlocks,
     desc: "These classic wooden blocks are designed to have endless pattern possibilities. Each block has three different patterns and stained contrast to aid in pattern recognition and spatial recognition skills.",
+    slides: patternBlocksSlides,
   },
   {
     name: "Sand City",
     img: sandCity,
     desc: "Sand City was inspired by sand castle molds. The market is so flooded with castle-themed sand toys, which are not relatable to children. Sand City enables children to make their own city at the beach with four unique city-building shaped molds.",
+    slides: sandCitySlides,
   },
   {
     name: "Hideout Desk",
@@ -134,16 +166,20 @@ function IndustrialDesignPage() {
               key={w.name}
               className="card-hover bg-card border border-border rounded-lg overflow-hidden flex flex-col"
             >
-              <div className="aspect-[4/3] bg-linen overflow-hidden">
-                <img
-                  src={w.img}
-                  alt={w.name}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {w.slides ? (
+                <ProductCarousel slides={w.slides} />
+              ) : (
+                <div className="aspect-[4/3] bg-linen overflow-hidden">
+                  <img
+                    src={w.img}
+                    alt={w.name}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="font-display text-2xl text-ink">{w.name}</h3>
                 <p className="text-sm text-ink/75 mt-3 leading-relaxed">{w.desc}</p>
