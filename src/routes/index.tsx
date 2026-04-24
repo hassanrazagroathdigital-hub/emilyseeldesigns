@@ -135,11 +135,13 @@ const works: Work[] = [
     name: "Scooplas",
     img: scooplas,
     desc: "The age-old problem of getting kids to pick up their toys just got a little easier. Scooplas are light, have easy-to-use mittens, and are flat on the bottom, making them very effective at scooping toys off the floor.",
+    slides: scooplasSlides,
   },
   {
     name: "My Little Rocket",
     img: myLittleRocket,
     desc: "Ever noticed how the large box that something was packaged in is often more entertaining than the toy itself? With My Little Rocket, the box is the toy. It unfolds into a spaceship big enough for children to play in, with pop-out cardboard pieces that connect like puzzle pieces to create stackable alien creatures.",
+    slides: myLittleRocketSlides,
   },
   {
     name: "Shirt Wings",
