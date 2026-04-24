@@ -31,6 +31,14 @@ import sw2 from "@/assets/shirt-wings-2.jpg";
 import sw3 from "@/assets/shirt-wings-3.jpg";
 import sw4 from "@/assets/shirt-wings-4.jpg";
 import sw5 from "@/assets/shirt-wings-5.jpg";
+import mlr1 from "@/assets/my-little-rocket-1.jpg";
+import mlr2 from "@/assets/my-little-rocket-2.jpg";
+import mlr3 from "@/assets/my-little-rocket-3.jpg";
+import mlr4 from "@/assets/my-little-rocket-4.jpg";
+import sp1 from "@/assets/scooplas-1.jpg";
+import sp2 from "@/assets/scooplas-2.jpg";
+import sp3 from "@/assets/scooplas-3.jpg";
+import sp4 from "@/assets/scooplas-4.jpg";
 
 const patternBlocksSlides: CarouselSlide[] = [
   { src: pb3, alt: "Wooden geometric Pattern Blocks", fit: "cover" },
@@ -51,6 +59,20 @@ const hideoutDeskSlides: CarouselSlide[] = [
   { src: hd2, alt: "Hideout Desk ideation sketches", fit: "contain", enhance: true },
   { src: hd3, alt: "Hideout Desk possible product line drawing", fit: "contain", enhance: true },
   { src: hd4, alt: "Child sitting at the Hideout Desk outdoors", fit: "cover", position: "top" },
+];
+
+const myLittleRocketSlides: CarouselSlide[] = [
+  { src: mlr1, alt: "Cardboard My Little Rocket toy with red interior", fit: "cover" },
+  { src: mlr2, alt: "My Little Rocket ideation sketches", fit: "contain", enhance: true },
+  { src: mlr3, alt: "My Little Rocket in-use and product line drawing", fit: "contain", enhance: true },
+  { src: mlr4, alt: "My Little Rocket possible product line drawing", fit: "contain", enhance: true },
+];
+
+const scooplasSlides: CarouselSlide[] = [
+  { src: sp1, alt: "White rounded mitten-form Scooplas product", fit: "contain", bg: "#F0EBE3" },
+  { src: sp2, alt: "Scooplas ideation sketches", fit: "contain", enhance: true },
+  { src: sp3, alt: "Scooplas product line possibilities drawing", fit: "contain", enhance: true },
+  { src: sp4, alt: "Child using Scooplas to scoop up toys", fit: "cover" },
 ];
 
 const shirtWingsSlides: CarouselSlide[] = [
@@ -113,11 +135,13 @@ const works: Work[] = [
     name: "Scooplas",
     img: scooplas,
     desc: "The age-old problem of getting kids to pick up their toys just got a little easier. Scooplas are light, have easy-to-use mittens, and are flat on the bottom, making them very effective at scooping toys off the floor.",
+    slides: scooplasSlides,
   },
   {
     name: "My Little Rocket",
     img: myLittleRocket,
     desc: "Ever noticed how the large box that something was packaged in is often more entertaining than the toy itself? With My Little Rocket, the box is the toy. It unfolds into a spaceship big enough for children to play in, with pop-out cardboard pieces that connect like puzzle pieces to create stackable alien creatures.",
+    slides: myLittleRocketSlides,
   },
   {
     name: "Shirt Wings",
