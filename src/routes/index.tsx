@@ -31,6 +31,14 @@ import sw2 from "@/assets/shirt-wings-2.jpg";
 import sw3 from "@/assets/shirt-wings-3.jpg";
 import sw4 from "@/assets/shirt-wings-4.jpg";
 import sw5 from "@/assets/shirt-wings-5.jpg";
+import mlr1 from "@/assets/my-little-rocket-1.jpg";
+import mlr2 from "@/assets/my-little-rocket-2.jpg";
+import mlr3 from "@/assets/my-little-rocket-3.jpg";
+import mlr4 from "@/assets/my-little-rocket-4.jpg";
+import sp1 from "@/assets/scooplas-1.jpg";
+import sp2 from "@/assets/scooplas-2.jpg";
+import sp3 from "@/assets/scooplas-3.jpg";
+import sp4 from "@/assets/scooplas-4.jpg";
 
 const patternBlocksSlides: CarouselSlide[] = [
   { src: pb3, alt: "Wooden geometric Pattern Blocks", fit: "cover" },
