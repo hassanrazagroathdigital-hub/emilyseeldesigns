@@ -166,16 +166,20 @@ function IndustrialDesignPage() {
               key={w.name}
               className="card-hover bg-card border border-border rounded-lg overflow-hidden flex flex-col"
             >
-              <div className="aspect-[4/3] bg-linen overflow-hidden">
-                <img
-                  src={w.img}
-                  alt={w.name}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {w.slides ? (
+                <ProductCarousel slides={w.slides} />
+              ) : (
+                <div className="aspect-[4/3] bg-linen overflow-hidden">
+                  <img
+                    src={w.img}
+                    alt={w.name}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="font-display text-2xl text-ink">{w.name}</h3>
                 <p className="text-sm text-ink/75 mt-3 leading-relaxed">{w.desc}</p>
