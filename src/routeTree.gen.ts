@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SoftGoodsRouteImport } from './routes/soft-goods'
+import { Route as OtherWorkRouteImport } from './routes/other-work'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SoftGoodsRoute = SoftGoodsRouteImport.update({
+  id: '/soft-goods',
+  path: '/soft-goods',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OtherWorkRoute = OtherWorkRouteImport.update({
+  id: '/other-work',
+  path: '/other-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/other-work': typeof OtherWorkRoute
+  '/soft-goods': typeof SoftGoodsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/other-work': typeof OtherWorkRoute
+  '/soft-goods': typeof SoftGoodsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/other-work': typeof OtherWorkRoute
+  '/soft-goods': typeof SoftGoodsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/contact' | '/other-work' | '/soft-goods'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contact' | '/other-work' | '/soft-goods'
+  id: '__root__' | '/' | '/contact' | '/other-work' | '/soft-goods'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  OtherWorkRoute: typeof OtherWorkRoute
+  SoftGoodsRoute: typeof SoftGoodsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/soft-goods': {
+      id: '/soft-goods'
+      path: '/soft-goods'
+      fullPath: '/soft-goods'
+      preLoaderRoute: typeof SoftGoodsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/other-work': {
+      id: '/other-work'
+      path: '/other-work'
+      fullPath: '/other-work'
+      preLoaderRoute: typeof OtherWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  OtherWorkRoute: OtherWorkRoute,
+  SoftGoodsRoute: SoftGoodsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
