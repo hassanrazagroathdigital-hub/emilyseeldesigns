@@ -12,6 +12,12 @@ import scooplas from "@/assets/scooplas.jpg";
 import myLittleRocket from "@/assets/my-little-rocket.jpg";
 import shirtWings from "@/assets/shirt-wings.jpg";
 import activityBoard from "@/assets/activity-board.jpg";
+import ab1 from "@/assets/activity-board-1.jpg";
+import ab2 from "@/assets/activity-board-2.jpg";
+import ab3 from "@/assets/activity-board-3.jpg";
+import ab4 from "@/assets/activity-board-4.jpg";
+import ab5 from "@/assets/activity-board-5.jpg";
+import ab6 from "@/assets/activity-board-6.jpg";
 import quiltPinwheel from "@/assets/quilt-pinwheel.jpg";
 import mosaicPlate from "@/assets/mosaic-plate.jpg";
 import pb1 from "@/assets/pattern-blocks-1.jpg";
@@ -66,6 +72,15 @@ const myLittleRocketSlides: CarouselSlide[] = [
   { src: mlr2, alt: "My Little Rocket ideation sketches", fit: "contain", enhance: true },
   { src: mlr3, alt: "My Little Rocket in-use and product line drawing", fit: "contain", enhance: true },
   { src: mlr4, alt: "My Little Rocket possible product line drawing", fit: "contain", enhance: true },
+];
+
+const activityBoardSlides: CarouselSlide[] = [
+  { src: ab1, alt: "Colorful Toddler Activity Board with rainbow elements", fit: "cover" },
+  { src: ab2, alt: "Activity board with latches, buckles, locks, and gears", fit: "cover" },
+  { src: ab3, alt: "Activity board with painted circles and sensory elements", fit: "cover" },
+  { src: ab4, alt: "Activity board variation with mechanical elements", fit: "cover" },
+  { src: ab5, alt: "Activity board variation with different arrangements", fit: "cover" },
+  { src: ab6, alt: "Children playing with the activity board", fit: "cover", position: "top" },
 ];
 
 const scooplasSlides: CarouselSlide[] = [
@@ -153,6 +168,7 @@ const works: Work[] = [
     name: "Toddler Activity Boards",
     img: activityBoard,
     desc: "These activity boards keep curious toddlers busy for hours. They are all cut to be interchangeable and fit an existing hanging system, so when children get bored with one, simply swap it out for another. Fine motor skills, color and shape matching, and number recognition are among the skills learned through play.",
+    slides: activityBoardSlides,
   },
 ];
 
