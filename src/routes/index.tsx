@@ -59,16 +59,25 @@ export const Route = createFileRoute("/")({
   component: IndustrialDesignPage,
 });
 
-const works = [
+type Work = {
+  name: string;
+  img: string;
+  desc: string;
+  slides?: CarouselSlide[];
+};
+
+const works: Work[] = [
   {
     name: "Pattern Blocks",
     img: patternBlocks,
     desc: "These classic wooden blocks are designed to have endless pattern possibilities. Each block has three different patterns and stained contrast to aid in pattern recognition and spatial recognition skills.",
+    slides: patternBlocksSlides,
   },
   {
     name: "Sand City",
     img: sandCity,
     desc: "Sand City was inspired by sand castle molds. The market is so flooded with castle-themed sand toys, which are not relatable to children. Sand City enables children to make their own city at the beach with four unique city-building shaped molds.",
+    slides: sandCitySlides,
   },
   {
     name: "Hideout Desk",
