@@ -61,6 +61,20 @@ const hideoutDeskSlides: CarouselSlide[] = [
   { src: hd4, alt: "Child sitting at the Hideout Desk outdoors", fit: "cover", position: "top" },
 ];
 
+const myLittleRocketSlides: CarouselSlide[] = [
+  { src: mlr1, alt: "Cardboard My Little Rocket toy with red interior", fit: "cover" },
+  { src: mlr2, alt: "My Little Rocket ideation sketches", fit: "contain", enhance: true },
+  { src: mlr3, alt: "My Little Rocket in-use and product line drawing", fit: "contain", enhance: true },
+  { src: mlr4, alt: "My Little Rocket possible product line drawing", fit: "contain", enhance: true },
+];
+
+const scooplasSlides: CarouselSlide[] = [
+  { src: sp1, alt: "White rounded mitten-form Scooplas product", fit: "contain", bg: "#F0EBE3" },
+  { src: sp2, alt: "Scooplas ideation sketches", fit: "contain", enhance: true },
+  { src: sp3, alt: "Scooplas product line possibilities drawing", fit: "contain", enhance: true },
+  { src: sp4, alt: "Child using Scooplas to scoop up toys", fit: "cover" },
+];
+
 const shirtWingsSlides: CarouselSlide[] = [
   { src: sw1, alt: "Wooden dragonfly-shaped Shirt Wings hanger", fit: "cover" },
   { src: sw2, alt: "Shirt Wings gear mechanism sketch", fit: "contain", enhance: true },
