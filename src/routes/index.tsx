@@ -216,25 +216,3 @@ function IndustrialDesignPage() {
     </PageShell>
   );
 }
-  return (
-    <Link
-      to={to}
-      className="card-hover relative block rounded-2xl overflow-hidden border border-border min-h-[360px] group"
-    >
-      <img
-        src={image}
-        alt={title}
-        loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/10" />
-      <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full min-h-[360px]">
-        <h3 className="font-display text-cream text-3xl md:text-4xl">{title}</h3>
-        <p className="text-cream/85 mt-3 max-w-md text-sm">{desc}</p>
-        <span className="nav-link mt-5 text-terracotta inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-          {cta} <span aria-hidden="true">→</span>
-        </span>
-      </div>
-    </Link>
-  );
-}
