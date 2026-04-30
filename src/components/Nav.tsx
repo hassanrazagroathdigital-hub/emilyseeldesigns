@@ -36,7 +36,7 @@ export function Nav() {
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
               className="nav-link text-ink/80 hover:text-terracotta transition-colors"
               activeProps={{ className: "nav-link text-terracotta" }}
@@ -98,7 +98,7 @@ export function Nav() {
           <nav className="flex flex-col gap-5">
             {links.map((l) => (
               <Link
-                key={l.to}
+                key={l.label}
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className="font-display text-2xl text-ink hover:text-terracotta"
