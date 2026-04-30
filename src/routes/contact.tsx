@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
-import portrait from "@/assets/emily-portrait.jpg";
+import portrait from "@/assets/emily-selfie.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
