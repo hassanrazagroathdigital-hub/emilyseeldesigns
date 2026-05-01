@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SoftGoodsRouteImport } from './routes/soft-goods'
 import { Route as OtherWorkRouteImport } from './routes/other-work'
+import { Route as IndustrialDesignRouteImport } from './routes/industrial-design'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const SoftGoodsRoute = SoftGoodsRouteImport.update({
 const OtherWorkRoute = OtherWorkRouteImport.update({
   id: '/other-work',
   path: '/other-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustrialDesignRoute = IndustrialDesignRouteImport.update({
+  id: '/industrial-design',
+  path: '/industrial-design',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/industrial-design': typeof IndustrialDesignRoute
   '/other-work': typeof OtherWorkRoute
   '/soft-goods': typeof SoftGoodsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/industrial-design': typeof IndustrialDesignRoute
   '/other-work': typeof OtherWorkRoute
   '/soft-goods': typeof SoftGoodsRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/industrial-design': typeof IndustrialDesignRoute
   '/other-work': typeof OtherWorkRoute
   '/soft-goods': typeof SoftGoodsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/other-work' | '/soft-goods'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/industrial-design'
+    | '/other-work'
+    | '/soft-goods'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/other-work' | '/soft-goods'
-  id: '__root__' | '/' | '/contact' | '/other-work' | '/soft-goods'
+  to: '/' | '/contact' | '/industrial-design' | '/other-work' | '/soft-goods'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/industrial-design'
+    | '/other-work'
+    | '/soft-goods'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  IndustrialDesignRoute: typeof IndustrialDesignRoute
   OtherWorkRoute: typeof OtherWorkRoute
   SoftGoodsRoute: typeof SoftGoodsRoute
 }
@@ -83,6 +104,13 @@ declare module '@tanstack/react-router' {
       path: '/other-work'
       fullPath: '/other-work'
       preLoaderRoute: typeof OtherWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industrial-design': {
+      id: '/industrial-design'
+      path: '/industrial-design'
+      fullPath: '/industrial-design'
+      preLoaderRoute: typeof IndustrialDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  IndustrialDesignRoute: IndustrialDesignRoute,
   OtherWorkRoute: OtherWorkRoute,
   SoftGoodsRoute: SoftGoodsRoute,
 }
