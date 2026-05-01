@@ -4,7 +4,8 @@ import { Mail, Instagram, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const links = [
-  { to: "/" as const, label: "Industrial Design" },
+  { to: "/" as const, label: "Home" },
+  { to: "/industrial-design" as const, label: "Industrial Design" },
   { to: "/soft-goods" as const, label: "Soft Goods" },
   { to: "/other-work" as const, label: "Other Work" },
   { to: "/contact" as const, label: "Contact" },
