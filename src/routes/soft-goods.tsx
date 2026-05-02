@@ -2,21 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
-import { GalleryGroup } from "@/components/GalleryGroup";
 
-import lovey1 from "@/assets/lovey-lion.jpg";
-import lovey2 from "@/assets/lovey-bunny.jpg";
-import lovey3 from "@/assets/lovey-penguin.jpg";
-import lovey4 from "@/assets/lovey-reindeer.jpg";
-import lovey5 from "@/assets/lovey-bear.jpg";
-import quiltA from "@/assets/quilt-pinwheel.jpg";
-import quiltB from "@/assets/quilt-woodland.jpg";
-import quiltC from "@/assets/quilt-abc.jpg";
-import quiltD from "@/assets/quilt-striped.jpg";
-import quiltE from "@/assets/quilt-giraffe.jpg";
-import apron1 from "@/assets/apron-floral.jpg";
-import apron2 from "@/assets/apron-holiday.jpg";
-import apron3 from "@/assets/apron-paisley.jpg";
+import sg1 from "@/assets/sg-1.jpg";
+import sg2 from "@/assets/sg-2.jpg";
+import sg3 from "@/assets/sg-3.jpg";
+import sg4 from "@/assets/sg-4.jpg";
+import sg5 from "@/assets/sg-5.jpg";
+import sg6 from "@/assets/sg-6.jpg";
+import sg7 from "@/assets/sg-7.jpg";
+import sg8 from "@/assets/sg-8.jpg";
+import sg9 from "@/assets/sg-9.jpg";
+import sg10 from "@/assets/sg-10.jpg";
+
+const images = [sg1, sg2, sg3, sg4, sg5, sg6, sg7, sg8, sg9, sg10];
 
 export const Route = createFileRoute("/soft-goods")({
   head: () => ({
@@ -33,8 +31,8 @@ export const Route = createFileRoute("/soft-goods")({
         content:
           "Sewn with care. Made to be cherished. A handmade collection of loveys, quilts, blankets, and aprons.",
       },
-      { property: "og:image", content: quiltA },
-      { name: "twitter:image", content: quiltA },
+      { property: "og:image", content: sg1 },
+      { name: "twitter:image", content: sg1 },
     ],
   }),
   component: SoftGoodsPage,
@@ -50,34 +48,19 @@ function SoftGoodsPage() {
       />
 
       <div className="py-16 md:py-20 bg-cream">
-        <GalleryGroup
-          label="Baby Loveys and Comfort Items"
-          items={[
-            { src: lovey1, caption: "Lion lovey — soft satin blanket body" },
-            { src: lovey2, caption: "Bunny lovey — pastel cotton" },
-            { src: lovey3, caption: "Penguin lovey — knit comfort" },
-            { src: lovey4, caption: "Reindeer lovey — plaid blanket" },
-            { src: lovey5, caption: "Bear lovey — knit cotton" },
-          ]}
-        />
-        <GalleryGroup
-          label="Quilts and Blankets"
-          items={[
-            { src: quiltA, caption: "Pinwheel patchwork quilt" },
-            { src: quiltB, caption: "Woodland animal nursery quilt" },
-            { src: quiltC, caption: "ABC and number patchwork blanket" },
-            { src: quiltD, caption: "Striped and plaid receiving blanket" },
-            { src: quiltE, caption: "Giraffe and panda baby blanket" },
-          ]}
-        />
-        <GalleryGroup
-          label="Aprons"
-          items={[
-            { src: apron1, caption: "Bold floral cross-back apron" },
-            { src: apron2, caption: "Holiday print ruffled apron" },
-            { src: apron3, caption: "Paisley mama and mini set" },
-          ]}
-        />
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <div className="columns-2 md:columns-3 gap-0 [&>img]:w-full [&>img]:mb-0 [&>img]:block">
+            {images.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                loading="lazy"
+                className="break-inside-avoid"
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <FolkDivider />
