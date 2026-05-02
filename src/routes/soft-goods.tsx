@@ -23,8 +23,18 @@ import sg17 from "@/assets/sg-17.jpg";
 import sg18 from "@/assets/sg-18.jpg";
 import sg19 from "@/assets/sg-19.jpg";
 import sg20 from "@/assets/sg-20.jpg";
+import sg21 from "@/assets/sg-21.jpg";
+import sg22 from "@/assets/sg-22.jpg";
+import sg23 from "@/assets/sg-23.jpg";
+import sg24 from "@/assets/sg-24.jpg";
+import sg25 from "@/assets/sg-25.jpg";
+import sg26 from "@/assets/sg-26.jpg";
+import sg27 from "@/assets/sg-27.jpg";
+import sg28 from "@/assets/sg-28.jpg";
+import sg29 from "@/assets/sg-29.jpg";
+import sg30 from "@/assets/sg-30.jpg";
 
-const images = [sg1, sg2, sg3, sg4, sg5, sg6, sg7, sg8, sg9, sg10, sg11, sg12, sg13, sg14, sg15, sg16, sg17, sg18, sg19, sg20];
+const images = [sg1, sg2, sg3, sg4, sg5, sg6, sg7, sg8, sg9, sg10, sg11, sg12, sg13, sg14, sg15, sg16, sg17, sg18, sg19, sg20, sg21, sg22, sg23, sg24, sg25, sg26, sg27, sg28, sg29, sg30];
 
 export const Route = createFileRoute("/soft-goods")({
   head: () => ({
