@@ -2,22 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
-import { GalleryGroup } from "@/components/GalleryGroup";
 
-import m1 from "@/assets/mosaic-plate.jpg";
-import m2 from "@/assets/mosaic-stepping.jpg";
-import m3 from "@/assets/mosaic-path.jpg";
-import m4 from "@/assets/mosaic-coasters.jpg";
-import m5 from "@/assets/mosaic-radial.jpg";
-import p1 from "@/assets/painting-abstract.jpg";
-import p2 from "@/assets/painting-robin.jpg";
-import p3 from "@/assets/painting-nature.jpg";
-import c1 from "@/assets/mug-fox.jpg";
-import c2 from "@/assets/mug-botanical.jpg";
-import c3 from "@/assets/mug-bird.jpg";
-import w1 from "@/assets/wood-birdhouse.jpg";
-import w2 from "@/assets/wood-abc.jpg";
-import w3 from "@/assets/wood-garden.jpg";
+import ow1 from "@/assets/ow-1.jpg";
+import ow2 from "@/assets/ow-2.jpg";
+import ow3 from "@/assets/ow-3.jpg";
+import ow4 from "@/assets/ow-4.jpg";
+import ow5 from "@/assets/ow-5.jpg";
+import ow6 from "@/assets/ow-6.jpg";
+import ow7 from "@/assets/ow-7.jpg";
+import ow8 from "@/assets/ow-8.jpg";
+import ow9 from "@/assets/ow-9.jpg";
+
+const images = [ow1, ow2, ow3, ow4, ow5, ow6, ow7, ow8, ow9];
 
 export const Route = createFileRoute("/other-work")({
   head: () => ({
@@ -34,8 +30,8 @@ export const Route = createFileRoute("/other-work")({
         content:
           "Mosaic, paint, clay, and wood — a full creative life of original handmade pieces.",
       },
-      { property: "og:image", content: m1 },
-      { name: "twitter:image", content: m1 },
+      { property: "og:image", content: ow1 },
+      { name: "twitter:image", content: ow1 },
     ],
   }),
   component: OtherWorkPage,
@@ -51,40 +47,19 @@ function OtherWorkPage() {
       />
 
       <div className="py-16 md:py-20 bg-cream">
-        <GalleryGroup
-          label="Mosaic Work"
-          items={[
-            { src: m1, caption: "Floral mosaic plate" },
-            { src: m2, caption: "Garden stepping stones" },
-            { src: m3, caption: "Mosaic garden path" },
-            { src: m4, caption: "Geometric tile coasters" },
-            { src: m5, caption: "Radial mandala wall piece" },
-          ]}
-        />
-        <GalleryGroup
-          label="Paintings"
-          items={[
-            { src: p1, caption: "Acrylic pour on canvas" },
-            { src: p2, caption: "Robin on a blossom branch" },
-            { src: p3, caption: "Nature-inspired botanical abstract" },
-          ]}
-        />
-        <GalleryGroup
-          label="Ceramics and Mugs"
-          items={[
-            { src: c1, caption: "Hand-painted fox mug" },
-            { src: c2, caption: "Botanical leaf mug" },
-            { src: c3, caption: "Bird and branch mug" },
-          ]}
-        />
-        <GalleryGroup
-          label="Woodwork and Other"
-          items={[
-            { src: w1, caption: "Cedar shingle birdhouse" },
-            { src: w2, caption: "ABC wooden block set" },
-            { src: w3, caption: "Carved garden markers" },
-          ]}
-        />
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <div className="columns-2 md:columns-3 gap-0 [&>img]:w-full [&>img]:mb-0 [&>img]:block">
+            {images.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                loading="lazy"
+                className="break-inside-avoid"
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <FolkDivider />
