@@ -307,21 +307,52 @@ function IndustrialDesignPage() {
           </p>
         </div>
 
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-6">
-          <TeaserCard
-            to="/soft-goods"
-            title="Soft Goods"
-            desc="Handmade loveys, patchwork quilts, baby blankets, and children's aprons sewn with care and intention."
-            cta="view soft goods"
-            image={quiltPinwheel}
-          />
-          <TeaserCard
-            to="/other-work"
-            title="Other Work"
-            desc="Mosaic art, acrylic paintings, ceramics, woodwork, and garden installations spanning over a decade of making."
-            cta="view other work"
-            image={mosaicPlate}
-          />
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
+          <a
+            href="https://folk-pattern-forge.lovable.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-hover group block rounded-2xl overflow-hidden border border-border bg-linen"
+          >
+            <div className="grid md:grid-cols-2 gap-0 items-stretch">
+              <div className="relative bg-ink/5 p-6 md:p-8 flex items-center justify-center">
+                <div className="w-full rounded-lg overflow-hidden border border-border shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] bg-cream">
+                  <div className="flex items-center gap-1.5 px-3 py-2 bg-ink/90 border-b border-border">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                    <span className="ml-3 text-[11px] text-cream/70 font-mono truncate">
+                      folk-pattern-forge.lovable.app
+                    </span>
+                  </div>
+                  <div className="aspect-[16/10] bg-cream">
+                    <iframe
+                      src="https://folk-pattern-forge.lovable.app/"
+                      title="Folk Pattern Forge preview"
+                      loading="lazy"
+                      className="w-full h-full border-0 pointer-events-none"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <span className="eyebrow">Featured Project</span>
+                <h3 className="font-display text-ink text-3xl md:text-4xl mt-3">
+                  Folk Pattern Forge
+                </h3>
+                <p className="font-display italic text-ink/65 text-lg mt-2">
+                  Explore more of Emily's creative work
+                </p>
+                <p className="text-ink/80 mt-5 text-sm leading-relaxed">
+                  A companion site exploring folk-inspired patterns, motifs, and design
+                  experiments — another corner of Emily's creative practice.
+                </p>
+                <span className="btn-primary mt-7 self-start inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                  visit the site <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
 
