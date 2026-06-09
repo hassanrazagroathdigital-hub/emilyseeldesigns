@@ -3,7 +3,6 @@ import { PageShell } from "@/components/PageShell";
 import { FolkDivider } from "@/components/FolkDivider";
 import { Marquee } from "@/components/Marquee";
 import { ProductCarousel, type CarouselSlide } from "@/components/ProductCarousel";
-import heroBlocks from "@/assets/hero-blocks.jpg";
 import portrait from "@/assets/emily-portrait-magenta.jpg";
 import patternBlocks from "@/assets/pattern-blocks.jpg";
 import sandCity from "@/assets/sand-city.jpg";
