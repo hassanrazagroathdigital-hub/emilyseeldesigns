@@ -174,7 +174,7 @@ function IndustrialDesignPage() {
     <PageShell>
       {/* HERO */}
       <section className="bg-cream">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-14 md:py-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-0 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="rise-in">
             <span className="eyebrow">Industrial Design — Portfolio</span>
             <h1 className="font-display text-ink text-5xl sm:text-6xl md:text-7xl mt-5 leading-[1.05]">
