@@ -193,7 +193,7 @@ function IndustrialDesignPage() {
             </div>
           </div>
           <div className="relative rise-in">
-          <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] bg-linen">
+          <div className="aspect-[4/5]">
             <img
               src={pb3}
               alt="Wooden geometric Pattern Blocks"
