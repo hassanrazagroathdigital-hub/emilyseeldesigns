@@ -110,8 +110,8 @@ export const Route = createFileRoute("/")({
         content:
           "Handmade products for children, designed and built with intention by Emily Seel in Portland, Oregon.",
       },
-      { property: "og:image", content: heroBlocks },
-      { name: "twitter:image", content: heroBlocks },
+      { property: "og:image", content: pb3 },
+      { name: "twitter:image", content: pb3 },
     ],
   }),
   component: IndustrialDesignPage,
@@ -193,15 +193,15 @@ function IndustrialDesignPage() {
             </div>
           </div>
           <div className="relative rise-in">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
-              <img
-                src={heroBlocks}
-                alt="Handmade wooden pattern blocks for children"
-                width={1280}
-                height={1280}
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] bg-linen">
+            <img
+              src={pb3}
+              alt="Wooden geometric Pattern Blocks"
+              width={1280}
+              height={1280}
+              className="w-full h-full object-contain"
+            />
+          </div>
             <div
               className="absolute -bottom-4 -left-4 hidden md:block w-28 h-28 rounded-full border-2 border-dashed border-terracotta/60"
               aria-hidden="true"
@@ -216,14 +216,14 @@ function IndustrialDesignPage() {
 
       {/* WORK */}
       <section id="work" className="py-20 md:py-28 bg-cream">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 text-center mb-14">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 text-center mb-14">
           <h2 className="font-display text-ink text-4xl md:text-5xl">Industrial Design Work</h2>
           <p className="mt-3 font-display italic text-ink/65 text-lg">
             Designing for children. Building for life.
           </p>
         </div>
 
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((w) => (
             <article
               key={w.name}

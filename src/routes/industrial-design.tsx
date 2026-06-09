@@ -177,7 +177,7 @@ function IndustrialDesignPage() {
       />
 
       <section className="py-16 md:py-20 bg-cream">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((w) => (
             <article
               key={w.name}
