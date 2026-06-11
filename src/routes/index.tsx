@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { PageShell } from "@/components/PageShell";
 import { FolkDivider } from "@/components/FolkDivider";
 import { Marquee } from "@/components/Marquee";
