@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
@@ -146,27 +146,7 @@ const works: Work[] = [
   },
 ];
 
-export const Route = createFileRoute("/industrial-design")({
-  head: () => ({
-    meta: [
-      { title: "Industrial Design — Emily Seel Designs" },
-      {
-        name: "description",
-        content:
-          "Industrial design portfolio by Emily Seel — thoughtful, handmade products designed for children, from wooden Pattern Blocks to Toddler Activity Boards.",
-      },
-      { property: "og:title", content: "Industrial Design — Emily Seel Designs" },
-      {
-        property: "og:description",
-        content:
-          "A portfolio of industrial design work focused on play, learning, and craft for children.",
-      },
-      { property: "og:image", content: patternBlocks },
-      { name: "twitter:image", content: patternBlocks },
-    ],
-  }),
-  component: IndustrialDesignPage,
-});
+export default IndustrialDesignPage;
 
 function IndustrialDesignPage() {
   return (

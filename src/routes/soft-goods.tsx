@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
@@ -36,29 +37,11 @@ import sg30 from "@/assets/sg-30.jpg";
 
 const images = [sg1, sg2, sg3, sg4, sg5, sg6, sg7, sg8, sg9, sg10, sg11, sg12, sg13, sg14, sg15, sg16, sg17, sg18, sg19, sg20, sg21, sg22, sg23, sg24, sg25, sg26, sg27, sg28, sg29, sg30];
 
-export const Route = createFileRoute("/soft-goods")({
-  head: () => ({
-    meta: [
-      { title: "Soft Goods — Emily Seel Designs" },
-      {
-        name: "description",
-        content:
-          "Handmade baby loveys, patchwork quilts, blankets, and children's aprons sewn with care by Emily Seel in Portland, Oregon.",
-      },
-      { property: "og:title", content: "Soft Goods — Emily Seel Designs" },
-      {
-        property: "og:description",
-        content:
-          "Sewn with care. Made to be cherished. A handmade collection of loveys, quilts, blankets, and aprons.",
-      },
-      { property: "og:image", content: sg1 },
-      { name: "twitter:image", content: sg1 },
-    ],
-  }),
-  component: SoftGoodsPage,
-});
-
-function SoftGoodsPage() {
+export default function SoftGoodsPage() {
+  useDocumentTitle(
+    "Soft Goods — Emily Seel Designs",
+    "Handmade baby loveys, patchwork quilts, blankets, and children's aprons sewn with care by Emily Seel in Portland, Oregon.",
+  );
   return (
     <PageShell>
       <PageHeader
