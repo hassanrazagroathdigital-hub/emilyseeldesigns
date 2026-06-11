@@ -109,13 +109,14 @@ function ContactPage() {
                       className="w-full bg-cream border border-border rounded-lg px-4 py-3 text-ink focus:outline-none focus:border-terracotta transition-colors resize-none"
                     />
                   </Field>
+                  {error && <p className="text-sm text-terracotta">{error}</p>}
                   <button
                     type="button"
                     onClick={handleSend}
-                    disabled={!canSend}
+                    disabled={!canSend || sending}
                     className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    send message
+                    {sending ? "sending…" : "send message"}
                   </button>
                 </div>
               </>
