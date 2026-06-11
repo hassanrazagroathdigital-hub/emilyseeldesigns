@@ -1,30 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import portrait from "@/assets/emily-portrait-magenta.jpg";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Emily Seel Designs" },
-      {
-        name: "description",
-        content:
-          "Get in touch with Emily Seel — questions, commissions, or custom handmade pieces. Based in Portland, Oregon.",
-      },
-      { property: "og:title", content: "Say Hello — Emily Seel Designs" },
-      {
-        property: "og:description",
-        content: "Reach out with questions, commissions, or just to connect.",
-      },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
+  useDocumentTitle(
+    "Contact — Emily Seel Designs",
+    "Get in touch with Emily Seel — questions, commissions, or custom handmade pieces. Based in Portland, Oregon.",
+  );
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");

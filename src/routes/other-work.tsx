@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { FolkDivider } from "@/components/FolkDivider";
@@ -15,29 +15,11 @@ import ow9 from "@/assets/ow-9.jpg";
 
 const images = [ow1, ow2, ow3, ow4, ow5, ow6, ow7, ow8, ow9];
 
-export const Route = createFileRoute("/other-work")({
-  head: () => ({
-    meta: [
-      { title: "Other Work — Emily Seel Designs" },
-      {
-        name: "description",
-        content:
-          "A decade of creative making across mosaic art, acrylic painting, ceramics, and woodwork by Emily Seel.",
-      },
-      { property: "og:title", content: "Other Work — Emily Seel Designs" },
-      {
-        property: "og:description",
-        content:
-          "Mosaic, paint, clay, and wood — a full creative life of original handmade pieces.",
-      },
-      { property: "og:image", content: ow1 },
-      { name: "twitter:image", content: ow1 },
-    ],
-  }),
-  component: OtherWorkPage,
-});
-
-function OtherWorkPage() {
+export default function OtherWorkPage() {
+  useDocumentTitle(
+    "Other Work — Emily Seel Designs",
+    "A decade of creative making across mosaic art, acrylic painting, ceramics, and woodwork by Emily Seel.",
+  );
   return (
     <PageShell>
       <PageHeader

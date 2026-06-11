@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageShell } from "@/components/PageShell";
 import { FolkDivider } from "@/components/FolkDivider";
 import { Marquee } from "@/components/Marquee";
@@ -95,27 +95,13 @@ const shirtWingsSlides: CarouselSlide[] = [
   { src: sw5, alt: "Child using Shirt Wings hanger to hang a shirt", fit: "contain" },
 ];
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Emily Seel Designs — Industrial Design Portfolio" },
-      {
-        name: "description",
-        content:
-          "Industrial designer and multidisciplinary maker based in Portland, Oregon. Thoughtful, handmade products for children — where craft meets intention.",
-      },
-      { property: "og:title", content: "Emily Seel Designs — Industrial Design Portfolio" },
-      {
-        property: "og:description",
-        content:
-          "Handmade products for children, designed and built with intention by Emily Seel in Portland, Oregon.",
-      },
-      { property: "og:image", content: pb3 },
-      { name: "twitter:image", content: pb3 },
-    ],
-  }),
-  component: IndustrialDesignPage,
-});
+export default function HomePageDefault() {
+  useDocumentTitle(
+    "Emily Seel Designs — Industrial Design Portfolio",
+    "Industrial designer and multidisciplinary maker based in Portland, Oregon. Thoughtful, handmade products for children — where craft meets intention.",
+  );
+  return <IndustrialDesignPage />;
+}
 
 type Work = {
   name: string;
