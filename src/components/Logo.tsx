@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import logo from "@/assets/emily-seel-designs-logo.png";
 
 export function Logo({ tone = "ink" }: { tone?: "ink" | "cream" }) {
