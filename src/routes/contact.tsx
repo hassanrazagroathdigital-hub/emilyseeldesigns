@@ -111,18 +111,18 @@ function ContactPage() {
             <h2 className="font-display text-3xl text-ink">Studio details</h2>
             <div className="mt-8 space-y-7">
               <Info label="Email">
-                <a href="mailto:hello@emilyseeldesigns.com" className="text-terracotta hover:underline">
-                  hello@emilyseeldesigns.com
+                <a href="mailto:seeldesigns@gmail.com" className="text-terracotta hover:underline">
+                  seeldesigns@gmail.com
                 </a>
               </Info>
               <Info label="Instagram">
                 <a
-                  href="https://instagram.com/emilyseeldesigns"
+                  href="https://www.instagram.com/matkaandmethreads/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-terracotta hover:underline"
                 >
-                  @emilyseeldesigns
+                  @matkaandmethreads
                 </a>
               </Info>
               <Info label="Response time">

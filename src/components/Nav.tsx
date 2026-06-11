@@ -49,14 +49,14 @@ export function Nav() {
 
         <div className="hidden lg:flex items-center gap-4 text-ink/70">
           <a
-            href="mailto:hello@emilyseeldesigns.com"
+            href="mailto:seeldesigns@gmail.com"
             aria-label="Email"
             className="hover:text-terracotta transition-colors"
           >
             <Mail size={18} />
           </a>
           <a
-            href="https://instagram.com/emilyseeldesigns"
+            href="https://www.instagram.com/matkaandmethreads/"
             aria-label="Instagram"
             target="_blank"
             rel="noreferrer"
@@ -110,9 +110,9 @@ export function Nav() {
             ))}
           </nav>
           <div className="mt-auto flex items-center gap-4 text-ink/70 pt-8 border-t border-border">
-            <a href="mailto:hello@emilyseeldesigns.com" aria-label="Email"><Mail size={18} /></a>
-            <a href="https://instagram.com/emilyseeldesigns" aria-label="Instagram" target="_blank" rel="noreferrer"><Instagram size={18} /></a>
-            <span className="eyebrow ml-auto">hello@emilyseeldesigns.com</span>
+            <a href="mailto:seeldesigns@gmail.com" aria-label="Email"><Mail size={18} /></a>
+            <a href="https://www.instagram.com/matkaandmethreads/" aria-label="Instagram" target="_blank" rel="noreferrer"><Instagram size={18} /></a>
+            <span className="eyebrow ml-auto">seeldesigns@gmail.com</span>
           </div>
         </aside>
       </div>

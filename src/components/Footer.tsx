@@ -21,11 +21,11 @@ export function Footer() {
             Small-batch, big love. Handmade and one-of-a-kind.
           </p>
           <div className="flex items-center gap-4 mt-5 text-cream/70">
-            <a href="mailto:hello@emilyseeldesigns.com" aria-label="Email" className="hover:text-terracotta transition-colors">
+            <a href="mailto:seeldesigns@gmail.com" aria-label="Email" className="hover:text-terracotta transition-colors">
               <Mail size={18} />
             </a>
             <a
-              href="https://instagram.com/emilyseeldesigns"
+              href="https://www.instagram.com/matkaandmethreads/"
               aria-label="Instagram"
               target="_blank"
               rel="noreferrer"
@@ -51,7 +51,7 @@ export function Footer() {
 
         <div className="md:text-right">
           <span className="eyebrow text-cream/55">Get in touch</span>
-          <p className="mt-3 text-cream/85">hello@emilyseeldesigns.com</p>
+          <p className="mt-3 text-cream/85">seeldesigns@gmail.com</p>
           <p className="text-cream/55 text-xs mt-6">
             © 2026 Emily Seel Designs. All rights reserved.
           </p>
