@@ -30,12 +30,28 @@ function ContactPage() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const canSend = name.trim() && email.trim() && message.trim();
 
-  const handleSend = () => {
-    if (!canSend) return;
-    setSent(true);
+  const handleSend = async () => {
+    if (!canSend || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("https://formspree.io/f/mvznwaka", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSent(true);
+    } catch (e) {
+      setError("Something went wrong. Please email seeldesigns@gmail.com directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
