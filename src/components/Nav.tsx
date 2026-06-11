@@ -1,14 +1,14 @@
-import { Link } from "@tanstack/react-router";
+import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Mail, Instagram, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const links = [
-  { to: "/" as const, label: "Home" },
-  { to: "/industrial-design" as const, label: "Industrial Design" },
-  { to: "/soft-goods" as const, label: "Soft Goods" },
-  { to: "/other-work" as const, label: "Other Work" },
-  { to: "/contact" as const, label: "Contact" },
+  { to: "/", label: "Home", end: true },
+  { to: "/industrial-design", label: "Industrial Design", end: false },
+  { to: "/soft-goods", label: "Soft Goods", end: false },
+  { to: "/other-work", label: "Other Work", end: false },
+  { to: "/contact", label: "Contact", end: false },
 ];
 
 export function Nav() {
@@ -35,24 +35,21 @@ export function Nav() {
 
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
-            <Link
+            <NavLink
               key={l.to}
               to={l.to}
-              className="nav-link text-ink/80 hover:text-terracotta transition-colors"
-              activeProps={{ className: "nav-link text-terracotta" }}
-              activeOptions={{ exact: l.to === "/" }}
+              end={l.end}
+              className={({ isActive }) =>
+                `nav-link transition-colors ${isActive ? "text-terracotta" : "text-ink/80 hover:text-terracotta"}`
+              }
             >
               {l.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-4 text-ink/70">
-          <a
-            href="mailto:seeldesigns@gmail.com"
-            aria-label="Email"
-            className="hover:text-terracotta transition-colors"
-          >
+          <a href="mailto:seeldesigns@gmail.com" aria-label="Email" className="hover:text-terracotta transition-colors">
             <Mail size={18} />
           </a>
           <a
@@ -66,16 +63,11 @@ export function Nav() {
           </a>
         </div>
 
-        <button
-          aria-label="Open menu"
-          className="lg:hidden p-2 text-ink"
-          onClick={() => setOpen(true)}
-        >
+        <button aria-label="Open menu" className="lg:hidden p-2 text-ink" onClick={() => setOpen(true)}>
           <Menu size={22} />
         </button>
       </div>
 
-      {/* Mobile slide-in */}
       <div
         className={`fixed inset-0 z-50 lg:hidden transition ${open ? "pointer-events-auto" : "pointer-events-none"}`}
         aria-hidden={!open}
@@ -97,16 +89,17 @@ export function Nav() {
           </div>
           <nav className="flex flex-col gap-5">
             {links.map((l) => (
-              <Link
+              <NavLink
                 key={l.to}
                 to={l.to}
+                end={l.end}
                 onClick={() => setOpen(false)}
-                className="font-display text-2xl text-ink hover:text-terracotta"
-                activeProps={{ className: "font-display text-2xl text-terracotta" }}
-                activeOptions={{ exact: l.to === "/" }}
+                className={({ isActive }) =>
+                  `font-display text-2xl ${isActive ? "text-terracotta" : "text-ink hover:text-terracotta"}`
+                }
               >
                 {l.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
           <div className="mt-auto flex items-center gap-4 text-ink/70 pt-8 border-t border-border">
@@ -119,3 +112,6 @@ export function Nav() {
     </header>
   );
 }
+
+// Silence unused-import lint in case some compilers flag bare Link import
+export { Link };

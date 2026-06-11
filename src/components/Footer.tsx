@@ -1,12 +1,12 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Mail, Instagram } from "lucide-react";
 import { Logo } from "./Logo";
 
 const links = [
-  { to: "/" as const, label: "Industrial Design" },
-  { to: "/soft-goods" as const, label: "Soft Goods" },
-  { to: "/other-work" as const, label: "Other Work" },
-  { to: "/contact" as const, label: "Contact" },
+  { to: "/industrial-design", label: "Industrial Design" },
+  { to: "/soft-goods", label: "Soft Goods" },
+  { to: "/other-work", label: "Other Work" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export function Footer() {
