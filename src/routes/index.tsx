@@ -287,13 +287,13 @@ function IndustrialDesignPage() {
         <div className="max-w-[1100px] mx-auto px-6 lg:px-10 text-center mb-14">
           <h2 className="font-display text-ink text-4xl md:text-5xl">More From Emily</h2>
           <p className="mt-3 font-display italic text-ink/65 text-lg">
-            Beyond industrial design — a full creative practice.
+            Beyond Industrial Design
           </p>
         </div>
 
         <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
           <a
-            href="https://folk-pattern-forge.lovable.app/"
+            href="https://www.matkaandmethreads.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="card-hover group block rounded-2xl overflow-hidden border border-border bg-linen"
@@ -306,13 +306,13 @@ function IndustrialDesignPage() {
                     <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
                     <span className="ml-3 text-[11px] text-cream/70 font-mono truncate">
-                      folk-pattern-forge.lovable.app
+                      matkaandmethreads.com
                     </span>
                   </div>
                   <div className="aspect-[16/10] bg-cream">
                     <iframe
-                      src="https://folk-pattern-forge.lovable.app/"
-                      title="Folk Pattern Forge preview"
+                      src="https://www.matkaandmethreads.com/"
+                      title="Matka and Me Threads preview"
                       loading="lazy"
                       className="w-full h-full border-0 pointer-events-none"
                     />
@@ -322,14 +322,14 @@ function IndustrialDesignPage() {
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <span className="eyebrow">Featured Project</span>
                 <h3 className="font-display text-ink text-3xl md:text-4xl mt-3">
-                  Folk Pattern Forge
+                  Matka and Me Threads
                 </h3>
                 <p className="font-display italic text-ink/65 text-lg mt-2">
-                  Explore more of Emily's creative work
+                  Hand crafted softgoods for the whole family
                 </p>
                 <p className="text-ink/80 mt-5 text-sm leading-relaxed">
-                  A companion site exploring folk-inspired patterns, motifs, and design
-                  experiments — another corner of Emily's creative practice.
+                  Check out companion site featuring hand sewn quilts, baby blankets, aprons, and
+                  other products for adults and children.
                 </p>
                 <span className="btn-primary mt-7 self-start inline-flex items-center gap-2 group-hover:gap-3 transition-all">
                   visit the site <span aria-hidden="true">→</span>
