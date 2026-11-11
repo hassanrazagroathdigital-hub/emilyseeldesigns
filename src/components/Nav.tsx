@@ -2,18 +2,20 @@ import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Mail, Instagram, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-
-const links = [
-  { to: "/", label: "Home", end: true },
-  { to: "/industrial-design", label: "Industrial Design", end: false },
-  { to: "/soft-goods", label: "Soft Goods", end: false },
-  { to: "/other-work", label: "Other Work", end: false },
-  { to: "/contact", label: "Contact", end: false },
-];
+import { useSiteSettings } from "@/lib/cms/public";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { navigation, contact } = useSiteSettings();
+
+  const links = [
+    { to: "/", label: navigation.home, end: true },
+    { to: "/industrial-design", label: navigation.industrialDesign, end: false },
+    { to: "/soft-goods", label: navigation.softGoods, end: false },
+    { to: "/other-work", label: navigation.otherWork, end: false },
+    { to: "/contact", label: navigation.contact, end: false },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -49,21 +51,33 @@ export function Nav() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4 text-ink/70">
-          <a href="mailto:seeldesigns@gmail.com" aria-label="Email" className="hover:text-terracotta transition-colors">
-            <Mail size={18} />
-          </a>
-          <a
-            href="https://www.instagram.com/matkaandmethreads/"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-terracotta transition-colors"
-          >
-            <Instagram size={18} />
-          </a>
+          {contact.email && (
+            <a
+              href={`mailto:${contact.email}`}
+              aria-label="Email"
+              className="hover:text-terracotta transition-colors"
+            >
+              <Mail size={18} />
+            </a>
+          )}
+          {contact.instagramUrl && (
+            <a
+              href={contact.instagramUrl}
+              aria-label="Instagram"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-terracotta transition-colors"
+            >
+              <Instagram size={18} />
+            </a>
+          )}
         </div>
 
-        <button aria-label="Open menu" className="lg:hidden p-2 text-ink" onClick={() => setOpen(true)}>
+        <button
+          aria-label="Open menu"
+          className="lg:hidden p-2 text-ink"
+          onClick={() => setOpen(true)}
+        >
           <Menu size={22} />
         </button>
       </div>
@@ -103,9 +117,22 @@ export function Nav() {
             ))}
           </nav>
           <div className="mt-auto flex items-center gap-4 text-ink/70 pt-8 border-t border-border">
-            <a href="mailto:seeldesigns@gmail.com" aria-label="Email"><Mail size={18} /></a>
-            <a href="https://www.instagram.com/matkaandmethreads/" aria-label="Instagram" target="_blank" rel="noreferrer"><Instagram size={18} /></a>
-            <span className="eyebrow ml-auto">seeldesigns@gmail.com</span>
+            {contact.email && (
+              <a href={`mailto:${contact.email}`} aria-label="Email">
+                <Mail size={18} />
+              </a>
+            )}
+            {contact.instagramUrl && (
+              <a
+                href={contact.instagramUrl}
+                aria-label="Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram size={18} />
+              </a>
+            )}
+            <span className="eyebrow ml-auto">{contact.email}</span>
           </div>
         </aside>
       </div>

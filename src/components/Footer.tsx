@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import { Mail, Instagram } from "lucide-react";
 import { Logo } from "./Logo";
-
-const links = [
-  { to: "/industrial-design", label: "Industrial Design" },
-  { to: "/soft-goods", label: "Soft Goods" },
-  { to: "/other-work", label: "Other Work" },
-  { to: "/contact", label: "Contact" },
-];
+import { useSiteSettings } from "@/lib/cms/public";
 
 export function Footer() {
+  const { navigation, contact, general } = useSiteSettings();
+  const links = [
+    { to: "/industrial-design", label: navigation.industrialDesign },
+    { to: "/soft-goods", label: navigation.softGoods },
+    { to: "/other-work", label: navigation.otherWork },
+    { to: "/contact", label: navigation.contact },
+  ];
+
   return (
     <footer className="bg-ink text-cream/85">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16 grid gap-12 md:grid-cols-3">
@@ -18,21 +20,29 @@ export function Footer() {
             <Logo tone="cream" />
           </div>
           <p className="font-display italic text-cream/80 mt-6 text-lg max-w-xs">
-            Small-batch, big love. Handmade and one-of-a-kind.
+            {general.footerTagline}
           </p>
           <div className="flex items-center gap-4 mt-5 text-cream/70">
-            <a href="mailto:seeldesigns@gmail.com" aria-label="Email" className="hover:text-terracotta transition-colors">
-              <Mail size={18} />
-            </a>
-            <a
-              href="https://www.instagram.com/matkaandmethreads/"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-terracotta transition-colors"
-            >
-              <Instagram size={18} />
-            </a>
+            {contact.email && (
+              <a
+                href={`mailto:${contact.email}`}
+                aria-label="Email"
+                className="hover:text-terracotta transition-colors"
+              >
+                <Mail size={18} />
+              </a>
+            )}
+            {contact.instagramUrl && (
+              <a
+                href={contact.instagramUrl}
+                aria-label="Instagram"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-terracotta transition-colors"
+              >
+                <Instagram size={18} />
+              </a>
+            )}
           </div>
         </div>
 
@@ -51,10 +61,8 @@ export function Footer() {
 
         <div className="md:text-right">
           <span className="eyebrow text-cream/55">Get in touch</span>
-          <p className="mt-3 text-cream/85">seeldesigns@gmail.com</p>
-          <p className="text-cream/55 text-xs mt-6">
-            © 2026 Emily Seel Designs. All rights reserved.
-          </p>
+          <p className="mt-3 text-cream/85">{contact.email}</p>
+          <p className="text-cream/55 text-xs mt-6">{general.copyright}</p>
         </div>
       </div>
     </footer>
